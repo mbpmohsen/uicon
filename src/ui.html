@@ -1681,7 +1681,203 @@
   <h5 id="message">Do you want download more?</h5>
   <p><b><a href="https://iconscout.com/contributors/maghsoudisadjad" target="_blank">Iconscout</a></b></p>
   <hr style="height:4px;border-width:0;color:rgb(255, 255, 255);background-color:rgb(255, 255, 255)">
-<link rel="stylesheet" href="./styles.css">
+<!--<link rel="stylesheet" href="./styles.css">-->
+<Style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+
+  /* hide scrollbar but allow scrolling */
+  body {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+
+
+  .search {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 20px 12px 16px;
+    gap: 2px;
+
+    position: static;
+    width: 264px;
+    height: 40px;
+    left: calc(50% - 264px/2);
+    top: calc(50% - 40px/2 - 176px);
+
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+    border-radius: 12px;
+  }
+
+
+  .placeholder {
+    font-family: 'Poppins', sans-serif;
+    color:rgba(173.18750202655792, 173.18750202655792, 173.18750202655792, 1);
+    width:76px;
+    height:15px;
+    position:absolute;
+    left:42px;
+    top:12.5px;
+    font-weight: bold;
+    text-align:left;
+    font-size:12px;
+    letter-spacing:0;
+  }
+
+
+  .icons {
+    align-content: space-between;
+    width: 95%;
+    padding: 10px;
+  }
+
+
+  .catagory_container {
+    background-color:#261034;
+    width:264px;
+    height:40px;
+    display: flex;
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+    position: relative;
+  }
+
+  .button_light {
+    background-color:rgba(255, 255, 255, 1);
+    width:49px;
+    height:32px;
+    position:absolute;
+    left:4px;
+    top:4px;
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+  }
+  .light {
+    color:rgba(0, 0, 0, 1);
+    width:29px;
+    height:15px;
+    position:absolute;
+    left:10px;
+    top:6px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align:left;
+    font-size:12px;
+    letter-spacing:0;
+  }
+  .button_bold {
+    width:46px;
+    height:32px;
+    position:absolute;
+    left:61px;
+    top:4px;
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+  }
+  .bold {
+    color:rgb(255, 255, 255);
+    width:26px;
+    height:15px;
+    position:absolute;
+    left:10px;
+    top:6px;
+    font-family: 'Poppins', sans-serif;
+    text-align:left;
+    font-size:12px;
+    letter-spacing:0;
+  }
+  .button_two_tone {
+    width:76px;
+    height:32px;
+    position:absolute;
+    left:115px;
+    top:4px;
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+  }
+  .two_tone {
+    color:rgb(255, 255, 255);
+    width:58px;
+    height:15px;
+    position:absolute;
+    left:10px;
+    top:6px;
+    font-family: 'Poppins', sans-serif;
+    text-align:left;
+    font-size:12px;
+    letter-spacing:0;
+  }
+  .button_broken {
+    width:61px;
+    height:32px;
+    position:absolute;
+    left:199px;
+    top:4px;
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+  }
+  .broken {
+    color:rgb(255, 255, 255);
+    width:41px;
+    height:15px;
+    position:absolute;
+    left:10px;
+    top:6px;
+    font-family: 'Poppins', sans-serif;
+    text-align:left;
+    font-size:12px;
+    letter-spacing:0;
+  }
+
+
+  h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+  }
+
+
+  a:link, a:visited {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  a:hover, a:active {
+    color: #b8b8b8;
+  }
+
+</Style>
 <script>
   // Toggle icons
   const iconButtons = ['action_light', 'action_bold', 'action_two_tone', 'action_broken'];
