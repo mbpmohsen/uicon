@@ -1,10 +1,10 @@
 <hr style="height: 8px;border-width:0;color:rgb(255, 255, 255);background-color:rgb(255, 255, 255)">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
 <div class="search">
-  <img src="https://svgur.com/i/qbQ.svg" alt="search box"> <input type="text" id="search" placeholder="Find me now!" style="font-family: 'Poppins', sans-serif">
+  <img src="https://svgur.com/i/qbQ.svg" alt="search box"> <input class="input-search" type="text" id="search" placeholder="Find me now!" style="font-family: 'Poppins', sans-serif">
 </div>
 <div id="icon-container">
-  <div style="display: block;" id="button_light_icons" class="icons">
+  <div style="display: flex;" id="action_light_icons" class="icons">
     <div class="icon" data-name="Activity">
       <?xml version="1.0" encoding="UTF-8"?>
       <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@
       </svg></div>
     <div class="icon" data-name="Bag">
       <?xml version="1.0" encoding="UTF-8"?>
-      <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
            xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
@@ -467,7 +467,7 @@
         </g>
       </svg></div>
   </div>
-  <div style="display: none;" id="button_bold_icons" class="icons">
+  <div style="display: none;" id="action_bold_icons" class="icons">
     <div class="icon" data-name="Activity">
       <?xml version="1.0" encoding="UTF-8"?>
       <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -829,7 +829,7 @@
         </g>
       </svg></div>
   </div>
-  <div style="display: none;" id="button_two_tone_icons" class="icons">
+  <div style="display: none;" id="action_two_tone_icons" class="icons">
     <div class="icon" data-name="Activity">
       <?xml version="1.0" encoding="UTF-8"?>
       <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -1306,7 +1306,7 @@
         </g>
       </svg></div>
   </div>
-  <div style="display: none;" id="button_broken_icons" class="icons">
+  <div style="display: none;" id="action_broken_icons" class="icons">
     <div class="icon" data-name="Activity">
       <?xml version="1.0" encoding="UTF-8"?>
       <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -1673,10 +1673,10 @@
   </div>
 </div>
 <div class=catagory_container>
-  <div class="button_light" id="action_light"><span class="light">Light</span></div>
-  <div class="button_bold" id="action_bold"><span class="bold">Bold</span></div>
-  <div class="button_two_tone" id="action_two_tone"><span class="two_tone">Two-tone</span></div>
-  <div class="button_broken" id="action_broken"><span class="broken">Broken</span></div>
+  <div class="button_action button_light active" id="action_light"><span class="light">Light</span></div>
+  <div class="button_action button_bold" id="action_bold"><span class="bold">Bold</span></div>
+  <div class="button_action button_two_tone" id="action_two_tone"><span class="two_tone">Two-tone</span></div>
+  <div class="button_action button_broken" id="action_broken"><span class="broken">Broken</span></div>
 </div>
   <h5 id="message">Do you want download more?</h5>
   <p><b><a href="https://iconscout.com/contributors/maghsoudisadjad" target="_blank">Iconscout</a></b></p>
@@ -1738,13 +1738,6 @@
   }
 
 
-  .icons {
-    align-content: space-between;
-    width: 95%;
-    padding: 10px;
-  }
-
-
   .catagory_container {
     background-color:#261034;
     width:264px;
@@ -1756,9 +1749,29 @@
     border-bottom-right-radius:16px;
     position: relative;
   }
-
-  .button_light {
+  .active {
     background-color:rgba(255, 255, 255, 1);
+    color: #261034 !important;
+  }
+  .active > span {
+    color: rgba(0, 0, 0, 1);
+    /*width: 29px;*/
+    /*height: 15px;*/
+    position: relative;
+    /*left: 10px;*/
+    /*top: 6px;*/
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+  .button_action {
+    cursor: pointer;
+    user-select: none;
+    color: rgba(255, 255, 255, 1);
+  }
+  .button_light {
     width:49px;
     height:32px;
     position:absolute;
@@ -1770,14 +1783,14 @@
     border-bottom-right-radius:16px;
   }
   .light {
-    color:rgba(0, 0, 0, 1);
+    /*color:rgba(0, 0, 0, 1);*/
     width:29px;
     height:15px;
     position:absolute;
     left:10px;
     top:6px;
     font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    /*font-weight: bold;*/
     text-align:left;
     font-size:12px;
     letter-spacing:0;
@@ -1794,7 +1807,6 @@
     border-bottom-right-radius:16px;
   }
   .bold {
-    color:rgb(255, 255, 255);
     width:26px;
     height:15px;
     position:absolute;
@@ -1877,23 +1889,49 @@
     color: #b8b8b8;
   }
 
+  .input-search {
+    border: none;
+    width: 100%;
+  }
+  .input-search:hover, .input-search:focus{
+    border: none;
+    outline: none;
+  }
+
+  input:focus {
+    border: none;
+  }
+  .icons {
+    display: flex;
+    width: 264px;
+    flex-wrap: wrap;
+  }
+  .icon {
+    padding: 10px;
+  }
 </Style>
 <script>
   // Toggle icons
   const iconButtons = ['action_light', 'action_bold', 'action_two_tone', 'action_broken'];
-  const icons = ['button_light_icons', 'button_bold_icons', 'button_two_tone_icons', 'button_broken_icons'];
+  const icons = ['action_light_icons', 'action_bold_icons', 'action_two_tone_icons', 'action_broken_icons'];
   iconButtons.forEach((id) => {
     const $el = document.getElementById(id);
     if ($el) {
-      $el.addEventListener('click', () => {
+      $el.addEventListener('click', (e) => {
+        $el.classList.add('active');
+        iconButtons.forEach((buttonId) => {
+          if (id !== buttonId) {
+            const $buttonEl = document.getElementById(buttonId);
+            $buttonEl.classList.remove('active');
+          }
+        })
         icons.forEach((iconId) => {
           const $iconEl = document.getElementById(iconId);
           if (`${id}_icons` === iconId) {
-            $iconEl.style.display = 'block';
+            $iconEl.style.display = 'flex';
           } else {
             $iconEl.style.display = 'none';
           }
-
         });
       })
     }
