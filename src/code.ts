@@ -1,25 +1,33 @@
-figma.showUI(__html__)
-figma.ui.resize(300 , 424);
+figma.showUI(__html__);
 
-figma.ui.onmessage = msg => {
-  if(msg.type === "load-svg"){
-    const frame = figma.createFrame();
-    const size = 48;
-    frame.name = msg.name;
+// Receive the drop event from the UI
+figma.on('drop', (event) => {
+  const { files, node, dropMetadata } = event;
 
-    let icon = msg.icon;
+  if (files.length > 0 && files[0].type === 'image/svg+xml') {
+    files[0].getTextAsync().then(text => {
+      if (dropMetadata.parentingStrategy === 'page') {
+        const newNode = figma.createNodeFromSvg(text);
+        newNode.x = event.absoluteX;
+        newNode.y = event.absoluteY;
 
-    frame.resizeWithoutConstraints(size,size)
-    const svg = figma.createNodeFromSvg(icon);
+        figma.currentPage.selection = [newNode];
+      } else if (dropMetadata.parentingStrategy === 'immediate') {
+        const newNode = figma.createNodeFromSvg(text);
 
-    svg.resize(size  , size );
+        // @ts-ignore
+        if (node.appendChild) {
+          // @ts-ignore
+          node.appendChild(newNode);
+        }
 
-    frame.backgrounds =  [{type: 'SOLID', color: {r : 0 , g : 0 , b :0 } , opacity : 0}];
-    frame.appendChild(svg.children[0]);
-    svg.remove();
-    // Center the frame in our current viewport so we can see it.
-    frame.x = figma.viewport.center.x - size  / 2
-    frame.y = figma.viewport.center.y - size  / 2
+        newNode.x = event.x;
+        newNode.y = event.y;
+
+        figma.currentPage.selection = [newNode];
+      }
+    });
+
+    return false;
   }
-  // figma.closePlugin()
-}
+});
