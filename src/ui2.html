@@ -3,9 +3,17 @@
     <link rel="stylesheet" href="https://static.figma.com/api/figma-extension-api-0.0.1.css">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
         .icons-grid {
-            display: flex;
-            flex-wrap: wrap;
+            /*display: flex;*/
+            /*flex-direction: row;*/
+            /*justify-content: space-between;*/
+            /*align-items: center;*/
+            /*gap: 10px;*/
+            /*position: relative;*/
+            /*width: 300px;*/
+            /*height: 45px;*/
         }
 
         .icon {
@@ -15,13 +23,12 @@
             margin: 4px;
             padding: 4px;
             width:24px;
+            background-color: #FFFFFF;
         }
 
         .icon:hover {
             background-color: #ddd;
         }
-
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 
         /* hide scrollbar but allow scrolling */
@@ -34,44 +41,6 @@
         body::-webkit-scrollbar {
             display: none; /* for Chrome, Safari, and Opera */
         }
-        .search {
-            font-family: 'Poppins', sans-serif;
-            box-sizing: border-box;
-
-            /* Auto layout */
-
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding: 12px 20px 12px 16px;
-            gap: 2px;
-
-            position: static;
-            width: 264px;
-            height: 40px;
-            left: calc(50% - 264px/2);
-            top: calc(50% - 40px/2 - 176px);
-
-            background: #FFFFFF;
-            border: 1px solid #DADADA;
-            border-radius: 12px;
-        }
-
-
-        .placeholder {
-            font-family: 'Poppins', sans-serif;
-            color:rgba(173.18750202655792, 173.18750202655792, 173.18750202655792, 1);
-            width:76px;
-            height:15px;
-            position:absolute;
-            left:42px;
-            top:12.5px;
-            font-weight: bold;
-            text-align:left;
-            font-size:12px;
-            letter-spacing:0;
-        }
-
 
         .catagory_container {
             background-color:#261034;
@@ -84,12 +53,14 @@
             border-bottom-right-radius:16px;
             position: relative;
         }
+
         .active {
             background-color:rgba(255, 255, 255, 1);
             color: #261034 !important;
             line-height: 18px;
             letter-spacing: 0;
         }
+
         .active > span {
             color: rgba(0, 0, 0, 1);
             left: 10px;
@@ -99,6 +70,7 @@
             font-size: 12px;
             letter-spacing: 0;
         }
+
         .button_action {
             cursor: pointer;
             user-select: none;
@@ -107,6 +79,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .button_action:not(.active) {
             font-family: 'Poppins', sans-serif;
             font-weight: bold;
@@ -115,6 +88,7 @@
             letter-spacing: 0;
             line-height: 18px;
         }
+
         .button_light {
             width:49px;
             height:32px;
@@ -126,19 +100,8 @@
             border-bottom-left-radius:16px;
             border-bottom-right-radius:16px;
         }
-        .light {
-            /*color:rgba(0, 0, 0, 1);*/
-            /*width:29px;*/
-            /*height:15px;*/
-            /*position:absolute;*/
-            /*left:10px;*/
-            /*top:6px;*/
-            /*font-family: 'Poppins', sans-serif;*/
-            /*!*font-weight: bold;*!*/
-            /*text-align:left;*/
-            /*font-size:12px;*/
-            /*letter-spacing:0;*/
-        }
+
+
         .button_bold {
             width:46px;
             height:32px;
@@ -150,6 +113,8 @@
             border-bottom-left-radius:16px;
             border-bottom-right-radius:16px;
         }
+
+
         .bold {
             width:26px;
             height:15px;
@@ -161,6 +126,8 @@
             font-size:12px;
             letter-spacing:0;
         }
+
+
         .button_two_tone {
             width:76px;
             height:32px;
@@ -172,6 +139,8 @@
             border-bottom-left-radius:16px;
             border-bottom-right-radius:16px;
         }
+
+
         .two_tone {
             color:rgb(255, 255, 255);
             width:58px;
@@ -184,6 +153,8 @@
             font-size:12px;
             letter-spacing:0;
         }
+
+
         .button_broken {
             width:61px;
             height:32px;
@@ -195,6 +166,8 @@
             border-bottom-left-radius:16px;
             border-bottom-right-radius:16px;
         }
+
+
         .broken {
             color:rgb(255, 255, 255);
             width:41px;
@@ -233,52 +206,15 @@
             color: #b8b8b8;
         }
 
-        .input-search {
-            border: none;
-            width: 100%;
-        }
-        .input-search:hover, .input-search:focus{
-            border: none;
-            outline: none;
-        }
-
         input:focus {
             border: none;
         }
-        .icons {
-            display: flex;
-            width: 264px;
-            flex-wrap: wrap;
-        }
-        .icon {
-            padding: 10px;
-        }
+
     </style>
 </head>
 <body>
     <!--  Light Icons  -->
     <div style="display: none;" id="action_light_icons" class="icons-grid">
-        <span class="icon" draggable="true">
-            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Iconly/Light/Activity" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g id="Activity" transform="translate(2.000000, 1.500000)" stroke="#200E32" stroke-width="1.5"><polyline id="Path_33966" points="5.24485128 13.2814646 8.23798631 9.39130439 11.652174 12.0732266 14.5812358 8.29290622"></polyline><circle id="Ellipse_741" cx="17.9954234" cy="2.70022885" r="1.92219681"></circle><path d="M12.9244852,1.62013731 L5.6567506,1.62013731 C2.64530894,1.62013731 0.778032041,3.75286043 0.778032041,6.76430209 L0.778032041,14.846682 C0.778032041,17.8581237 2.60869567,19.9816935 5.6567506,19.9816935 L14.2608696,19.9816935 C17.2723113,19.9816935 19.1395882,17.8581237 19.1395882,14.846682 L19.1395882,7.80778036" id="Path"></path></g></g></svg>
-        </span>
-        <span class="icon" draggable="true">
-            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Iconly/Light/Bag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
-               stroke-linecap="round" stroke-linejoin="round">
-              <g id="Bag" transform="translate(2.500000, 1.500000)" stroke="#200E32" stroke-width="1.5">
-                <path
-                        d="M14.01373,20.0000001 L5.66590392,20.0000001 C2.59954235,20.0000001 0.247139589,18.8924486 0.915331812,14.4347827 L1.69336385,8.39359272 C2.10526317,6.16933642 3.52402748,5.31807783 4.76887874,5.31807783 L14.9473685,5.31807783 C16.2105264,5.31807783 17.5469108,6.23340964 18.0228834,8.39359272 L18.8009154,14.4347827 C19.3684211,18.3890161 17.0800916,20.0000001 14.01373,20.0000001 Z"
-                        id="Path_33955"></path>
-                <path
-                        d="M14.1510298,5.09839819 C14.1510298,2.71232585 12.216736,0.7779932 9.83066366,0.7779932 L9.83066366,0.7779932 C8.68166274,0.773163349 7.57805185,1.22619323 6.76386233,2.03694736 C5.9496728,2.84770148 5.49199087,3.94938696 5.49199087,5.09839819 L5.49199087,5.09839819"
-                        id="Path_33956"></path>
-                <line x1="12.7963387" y1="9.60183071" x2="12.7505721" y2="9.60183071" id="Line_192"></line>
-                <line x1="6.96567509" y1="9.60183071" x2="6.9199085" y2="9.60183071" id="Line_193"></line>
-              </g>
-            </g>
-          </svg>
-        </span>
 
         <span class="icon" draggable="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
@@ -301,8 +237,14 @@
           </span>
 
         <span class="icon" draggable="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bluetooth"><polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"></polyline></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
           </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+
     </div>
     <!--  Bold Icons  -->
     <div style="display: none;" id="action_bold_icons" class="icons-grid">
@@ -322,6 +264,7 @@
             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Iconly/Light/Activity" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g id="Activity" transform="translate(2.000000, 1.500000)" stroke="#200E32" stroke-width="1.5"><polyline id="Path_33966" points="5.24485128 13.2814646 8.23798631 9.39130439 11.652174 12.0732266 14.5812358 8.29290622"></polyline><circle id="Ellipse_741" cx="17.9954234" cy="2.70022885" r="1.92219681"></circle><path d="M12.9244852,1.62013731 L5.6567506,1.62013731 C2.64530894,1.62013731 0.778032041,3.75286043 0.778032041,6.76430209 L0.778032041,14.846682 C0.778032041,17.8581237 2.60869567,19.9816935 5.6567506,19.9816935 L14.2608696,19.9816935 C17.2723113,19.9816935 19.1395882,17.8581237 19.1395882,14.846682 L19.1395882,7.80778036" id="Path"></path></g></g></svg>
         </span>
     </div>
+
     <form>
         <div class=catagory_container>
             <div class="button_action button_light active" id="action_light"><span class="light">Light</span></div>
@@ -330,6 +273,7 @@
             <div class="button_action button_broken" id="action_broken"><span class="broken">Broken</span></div>
         </div>
     </form>
+
     <h5 id="message">Get more downloads?</h5>
     <p><b><a href="https://iconscout.com/contributors/maghsoudisadjad" target="_blank">Iconscout</a></b></p>
     <hr style="height:4px;border-width:0;color:rgb(255, 255, 255);background-color:rgb(255, 255, 255)">
