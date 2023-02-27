@@ -1,19 +1,20 @@
 <html>
 <head>
-    <link rel="stylesheet" href="https://static.figma.com/api/figma-extension-api-0.0.1.css">
+<!--    <link rel="stylesheet" href="https://static.figma.com/api/figma-extension-api-0.0.1.css">-->
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
         .icons-grid {
-            /*display: flex;*/
-            /*flex-direction: row;*/
-            /*justify-content: space-between;*/
-            /*align-items: center;*/
-            /*gap: 10px;*/
-            /*position: relative;*/
-            /*width: 300px;*/
-            /*height: 45px;*/
+            overflow-wrap: break-word;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 8px;
+            width: 264px;
+            height: 24px;
+            flex-wrap: wrap;
+            align-content: stretch;
+            justify-content: space-between;
         }
 
         .icon {
@@ -51,7 +52,9 @@
             border-top-right-radius:16px;
             border-bottom-left-radius:16px;
             border-bottom-right-radius:16px;
-            position: relative;
+            position: fixed;
+            top: 336px;
+            margin: 8px;
         }
 
         .active {
@@ -65,7 +68,7 @@
             color: rgba(0, 0, 0, 1);
             left: 10px;
             font-family: 'Poppins', sans-serif;
-            font-weight: bold;
+            font-weight: 900;
             text-align: left;
             font-size: 12px;
             letter-spacing: 0;
@@ -82,7 +85,7 @@
 
         .button_action:not(.active) {
             font-family: 'Poppins', sans-serif;
-            font-weight: bold;
+            font-weight: normal;
             text-align: left;
             font-size: 12px;
             letter-spacing: 0;
@@ -121,6 +124,7 @@
             position:absolute;
             left:10px;
             top:6px;
+            font-weight: 200;
             font-family: 'Poppins', sans-serif;
             text-align:left;
             font-size:12px;
@@ -143,12 +147,11 @@
 
         .two_tone {
             color:rgb(255, 255, 255);
-            width:58px;
             height:15px;
             position:absolute;
             left:10px;
             top:6px;
-            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
             text-align:left;
             font-size:12px;
             letter-spacing:0;
@@ -175,19 +178,13 @@
             position:absolute;
             left:10px;
             top:6px;
-            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
             text-align:left;
             font-size:12px;
             letter-spacing:0;
         }
 
 
-        h5 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: normal;
-            font-size: 12px;
-            text-align: center;
-        }
 
 
         a:link, a:visited {
@@ -209,6 +206,22 @@
         input:focus {
             border: none;
         }
+
+        a:link, a:visited {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            font-size: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 4px;
+            width: 264px;
+            height: 32px;
+            left: 19px;
+        }
+
 
     </style>
 </head>
@@ -244,6 +257,49 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
           </span>
 
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
+
+        <span class="icon" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>
+          </span>
 
     </div>
     <!--  Bold Icons  -->
@@ -264,7 +320,7 @@
             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Iconly/Light/Activity" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g id="Activity" transform="translate(2.000000, 1.500000)" stroke="#200E32" stroke-width="1.5"><polyline id="Path_33966" points="5.24485128 13.2814646 8.23798631 9.39130439 11.652174 12.0732266 14.5812358 8.29290622"></polyline><circle id="Ellipse_741" cx="17.9954234" cy="2.70022885" r="1.92219681"></circle><path d="M12.9244852,1.62013731 L5.6567506,1.62013731 C2.64530894,1.62013731 0.778032041,3.75286043 0.778032041,6.76430209 L0.778032041,14.846682 C0.778032041,17.8581237 2.60869567,19.9816935 5.6567506,19.9816935 L14.2608696,19.9816935 C17.2723113,19.9816935 19.1395882,17.8581237 19.1395882,14.846682 L19.1395882,7.80778036" id="Path"></path></g></g></svg>
         </span>
     </div>
-
+    <!--    Catagory Container-->
     <form>
         <div class=catagory_container>
             <div class="button_action button_light active" id="action_light"><span class="light">Light</span></div>
@@ -273,10 +329,10 @@
             <div class="button_action button_broken" id="action_broken"><span class="broken">Broken</span></div>
         </div>
     </form>
+    <!--    Call to Action-->
+    <p><a href="https://iconscout.com/contributors/maghsoudisadjad" target="_blank" id="message">
+        Download More and mre!</a></p>
 
-    <h5 id="message">Get more downloads?</h5>
-    <p><b><a href="https://iconscout.com/contributors/maghsoudisadjad" target="_blank">Iconscout</a></b></p>
-    <hr style="height:4px;border-width:0;color:rgb(255, 255, 255);background-color:rgb(255, 255, 255)">
 </body>
 <script>
     const icons = document.getElementsByClassName('icon');
