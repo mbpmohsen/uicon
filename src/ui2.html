@@ -300,7 +300,7 @@
 <body>
     <!-- Search Box -->
     <div class="search">
-        <img src="https://svgshare.com/i/qic.svg" alt=""> <input type="text" id="search" placeholder="Explore and find!">
+        <img src="https://svgshare.com/i/qic.svg" alt=""> <input name="search" type="text" id="search" placeholder="Explore and find!">
     </div>
     <!-- Divider Top -->
     <div class="divider top"></div>
@@ -617,8 +617,33 @@
     }
 
     //Search box
+    const searchInput = document.getElementById('search');
+    const iconElements = document.getElementsByClassName('icon');
 
+    let isEmpty = true;
 
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value;
+
+        for (const $el in iconElements) {
+
+            const dataName =  iconElements[$el].getAttribute('data-name');
+
+            if (dataName.includes(value)) {
+                isEmpty = false;
+                iconElements[$el].style.display = 'block';
+            } else {
+                iconElements[$el].style.display = 'none';
+            }
+        }
+
+        if (isEmpty) {
+            const emptyPage = document.getElementById('empty-page');
+            emptyPage.style.display = 'block';
+        } else {
+            emptyPage.style.display = 'none';
+        }
+    })
 
     // Logic about change icon category
 
