@@ -681,26 +681,29 @@
 
     const searchInput = document.getElementById('search');
     const iconElements = document.getElementsByClassName('icon');
-
-    let isEmpty = true;
+    const emptyPage = document.getElementById('not-found-container');
 
     searchInput.addEventListener('input', (e) => {
         const value = e.target.value;
-
+        let isEmpty = true;
+        if (value === '') {
+            emptyPage.style.display = 'none';
+        }
         for (const $el in iconElements) {
 
-            const dataName =  iconElements[$el].getAttribute('data-name');
-
-            if (dataName.includes(value)) {
+            const dataName = iconElements[$el].getAttribute ? iconElements[$el]?.getAttribute('data-name') : '';
+            if (dataName && dataName.includes(value)) {
                 isEmpty = false;
-                iconElements[$el].style.display = 'block';
+                if (iconElements[$el].style) {
+                    iconElements[$el].style.display = 'block';
+                }
             } else {
-                iconElements[$el].style.display = 'none';
+                if (iconElements[$el].style) {
+                    iconElements[$el].style.display = 'none';
+                }
             }
         }
-
         if (isEmpty) {
-            const emptyPage = document.getElementById('not-found-container');
             emptyPage.style.display = 'block';
         } else {
             emptyPage.style.display = 'none';
