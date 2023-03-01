@@ -257,7 +257,7 @@
         }
 
 
-        a:link, a:visited {
+        #message {
             position: fixed;
             font-family: 'Poppins', sans-serif;
             color: black;
@@ -270,15 +270,15 @@
             border-radius: 8px;
         }
 
-        a:hover, a:active {
+        #message:hover, #message:active {
             color: #b8b8b8;
         }
 
-        input:focus {
+        #message:focus {
             border: none;
         }
 
-        a:link, a:visited {
+        #message:link, #message:visited {
             position: fixed;
             font-family: 'Poppins', sans-serif;
             font-weight: 200;
@@ -329,10 +329,8 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 8px;
             gap: 10px;
-            width: 140px;
-            height: 32px;
             background: #261034;
             border-radius: 16px;
             font-family: 'Poppins', sans-serif;
@@ -341,10 +339,11 @@
             font-size: 12px;
             line-height: 15px;
             color: #FFFFFF;
+            display: flex;
         }
 
         .request-btn:hover {
-            background-color: #111111;
+            background-color: #b8b8b8;
         }
 
 </style>
