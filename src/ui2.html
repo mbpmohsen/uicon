@@ -61,7 +61,7 @@
 
         .icons-grid {
             overflow-y: auto;
-            max-height: calc(100vh - 156px);
+            max-height: calc(100vh - 145px);
             overflow-wrap: break-word;
             flex-direction: row;
             align-items: flex-end;
@@ -80,16 +80,16 @@
         .icon {
             border-radius: 10px;
             cursor:grab;
-            height:24px;
+            height:36px;
             margin: 4px;
             padding: 4px;
-            width:24px;
+            width:36px;
             background-color: #FFFFFF;
         }
 
         .icon:hover {
             background: #FFFFFF;
-            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 0px 2px #D1D1D1;
         }
 
         .catagory_container {
@@ -300,18 +300,20 @@
 <body>
     <!-- Search Box -->
     <div class="search">
-        <img src="https://svgshare.com/i/qic.svg" alt=""> <input type="text" id="search"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           placeholder="Explore and find!">
+        <img src="https://svgshare.com/i/qic.svg" alt=""> <input type="text" id="search" placeholder="Explore and find!">
     </div>
     <!-- Divider Top -->
     <div class="divider top"></div>
     <!-- Divider Bottom -->
     <div class="divider bottom"></div>
     <!--  Light Icons  -->
-    <div style="display: none;" id="action_light_icons" class="icons-grid">
+    <div style="display: flex;" id="action_light_icons" class="icons-grid">
 
-        <span class="icon" draggable="true" data-name="align">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span class="icon" draggable="true" data-name="brush">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <path d="M20.3611 8.85316C21.0666 7.54462 22.7098 7.0717 24.003 7.80503V7.80503C25.3138 8.54839 25.7424 10.2333 24.946 11.5127L19.9882 19.4775C19.3183 20.5536 17.9178 20.9081 16.8167 20.2802V20.2802C15.7039 19.6456 15.3008 18.2388 15.9088 17.1112L20.3611 8.85316Z" stroke="black" stroke-width="2"/>
+            <path d="M16.4958 20.76C18.225 21.7406 18.8071 23.981 17.7959 25.764C16.8501 27.4319 14.7706 28.6806 12.971 28.7267C10.7516 28.9919 10.5356 26.94 11.5149 26.3688C13.4773 25.2241 10.5621 23.9265 11.9656 21.4517C12.9767 19.6687 14.7666 19.7793 16.4958 20.76Z" stroke="black" stroke-width="2"/>
+            </svg>
           </span>
 
         <span class="icon" draggable="true" data-name="name-">
@@ -326,8 +328,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-center"><line x1="18" y1="10" x2="6" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="18" y1="18" x2="6" y2="18"></line></svg>
           </span>
 
-        <span class="icon" draggable="true" data-name="name-">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-center"><line x1="18" y1="10" x2="6" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="18" y1="18" x2="6" y2="18"></line></svg>
+        <span class="icon" draggable="true" data-name="Eye">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <path d="M27.6626 15.7491C28.4515 17.1574 28.4627 18.8466 27.6838 20.2605C26.3068 22.7598 23.3687 26.4375 18 26.4375C12.6313 26.4375 9.69315 22.7598 8.31625 20.2605C7.53731 18.8466 7.54846 17.1574 8.33743 15.7491C9.73769 13.2496 12.7013 9.5625 18 9.5625C23.2987 9.5625 26.2623 13.2496 27.6626 15.7491Z" stroke="black" stroke-width="2"/>
+            <circle cx="18" cy="18" r="3.65625" stroke="black" stroke-width="2"/>
+            </svg>
           </span>
 
         <span class="icon" draggable="true" data-name="name-">
@@ -613,13 +618,7 @@
 
     //Search box
 
-    var search = document.getElementById("search");
-    search.addEventListener("keyup", function (e) {
-        // console.log(this.value);
-        let val = this.value.toLowerCase();
-        let show_icons = icons_list.filter(k => k.toLowerCase().includes(val));
-        renderIcons(show_icons);
-    });
+
 
     // Logic about change icon category
 
