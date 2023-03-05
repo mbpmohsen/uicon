@@ -4,7 +4,8 @@
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui2.html",
-    "editorType": [
-    "figma"
+  "editorType": [
+    "figma",
+    "figjam"
   ]
 }
