@@ -2943,7 +2943,24 @@
         }
     })
 
-    // Logic about change icon category
+    // Listen for keydown event on the document
+    document.addEventListener('keydown', (event) => {
+    // Check if the "/" key was pressed
+    if (event.key === '/') {
+        // Check if the search input field is focused
+        if (document.activeElement === searchInput) {
+            // Perform search operation here
+            console.log('Search triggered!');
+        } else {
+            // Set focus on the search input field
+            searchInput.focus();
+        }
+        // Prevent the "/" key from being entered in the search field
+        event.preventDefault();
+    }
+    });
+
+// Logic about change icon category
 
     const iconButtons = ['action_light', 'action_bold', 'action_two_tone', 'action_broken'];
     const iconsWrapper = ['action_light_icons', 'action_bold_icons', 'action_two_tone_icons', 'action_broken_icons'];
