@@ -43,13 +43,39 @@
             font-size: 12px;
         }
 
-        img {
+        .slash-container {
+            position: relative;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .slash-container.active {
+            opacity: 0;
+        }
+
+        .slash {
+            display: block;
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            opacity: 0.5;
+            border: 1px solid black;
+            border-radius: 4px;
             width: 16px;
             height: 16px;
-            color: #3B3B3B;
-            fill: currentColor;
-            gap: 10px;
+            text-align: center;
+            line-height: 16px;
+            pointer-events: none;
         }
+
+        .search:focus-within .slash-container {
+            opacity: 0;
+            transition: opacity 0.2s ease-out;
+        }
+
+
 
         button {
             all: unset;
@@ -353,7 +379,10 @@
 
     <!-- Search Box -->
     <div class="search">
-        <img src="https://svgshare.com/i/qic.svg" alt=""> <input name="search" type="text" id="search" placeholder="Explore and find!">
+        <input name="search" type="text" id="search" placeholder="Explore and find!">
+        <div class="slash-container">
+            <span class="slash">/</span>
+        </div>
     </div>
     <!-- Divider Top -->
     <div class="divider top"></div>
@@ -2915,6 +2944,7 @@
     const searchInput = document.getElementById('search');
     const iconElements = document.getElementsByClassName('icon');
     const emptyPage = document.getElementById('not-found-container');
+    const slashContainer = document.getElementsByClassName("slash-container");
 
     searchInput.addEventListener('input', (e) => {
         const value = e.target.value;
@@ -2958,6 +2988,18 @@
         // Prevent the "/" key from being entered in the search field
         event.preventDefault();
     }
+    });
+
+    searchInput.addEventListener("click", function() {
+    slashContainer.style.display = "none";
+    });
+
+    searchInput.addEventListener('focus', () => {
+    slashContainer.classList.add('active');
+    });
+
+    searchInput.addEventListener('blur', () => {
+    slashContainer.classList.remove('active');
     });
 
 // Logic about change icon category
