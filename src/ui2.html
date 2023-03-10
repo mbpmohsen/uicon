@@ -2900,6 +2900,14 @@ const GA_TRACKING_CODE = "G-BS2PYJK6VG";
     // Call the function to initialize Google Analytics tracking
     initializeGoogleAnalytics();
 
+    const message = document.getElementById("message");
+
+    message.addEventListener("click", function() {
+        gtag('event', 'click', {
+            'event_category': 'Button',
+            'event_label': 'Download More and More'
+        });
+    });
 
 // Drag and drop
 
