@@ -2886,6 +2886,21 @@
 </body>
 <script>
 
+// Google Analytics tracking code
+const GA_TRACKING_CODE = "G-BS2PYJK6VG";
+
+    // Function to initialize Google Analytics tracking
+    function initializeGoogleAnalytics() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", GA_TRACKING_CODE);
+    }
+
+    // Call the function to initialize Google Analytics tracking
+    initializeGoogleAnalytics();
+
+
 // Drag and drop
 
 const icons = document.getElementsByClassName('icon');
